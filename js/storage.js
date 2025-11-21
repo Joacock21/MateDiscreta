@@ -39,10 +39,11 @@ window.infoGeneralData = {
 // BIBLIOGRAFÍA
 // ============================================
 window.bibliografiaData = [
-    { titulo: 'Probabilidad y Estadística para Ingeniería y Ciencias', autores: 'Devore, J. L.', año: 2016, editorial: 'Cengage Learning', edicion: '9na Edición' },
-    { titulo: 'Estadística Matemática con Aplicaciones', autores: 'Wackerly, D., Mendenhall, W., & Scheaffer, R.', año: 2010, editorial: 'Cengage Learning', edicion: '7ma Edición' },
-    { titulo: 'Matemáticas Discretas y sus Aplicaciones', autores: 'Rosen, K. H.', año: 2012, editorial: 'McGraw-Hill', edicion: '7ma Edición' },
-    { titulo: 'Introduction to the Practice of Statistics', autores: 'Moore, D. S., McCabe, G. P., & Craig, B. A.', año: 2017, editorial: 'W. H. Freeman', edicion: '9na Edición' },
+    { titulo: 'Moovit Plataforma de movilidad Urbana', autor: 'Moovit Inc.', año: 2024, editorial: 'Moovit.com', edicion: '1ra Edición' },
+    { titulo: 'Tu Ruta App de rutas y movilidad en lima', autores: 'Equipo TuRuta', año: 2024, editorial: 'Tu Ruta.Pe', edicion: '1ra Edición' },
+    { titulo: 'Portal de Datos abierto Del transporte - MTC', autores: 'Ministerio de transportes y Comunicaciones del Perú.', año: 2012, editorial: 'MTC', edicion: '1ra Edición' },
+    { titulo: 'Transporte y Movilidad urbana en la Molina', autores: 'Municipalidad Distrital  de la Molina.', año: 2024, editorial: 'Municipalidad de la molina', edicion: '1ra Edición' },
+    { titulo: 'Grupo De matematica Discreta', autores: 'Victor Arias R. Fabian Chavez V. Javier Costa S. Daphne Rojas C.', año: 2025, editorial: 'LOS DISCRETOS', edicion: '1ra Edición' },
 ];
 
 window.variables = [];
