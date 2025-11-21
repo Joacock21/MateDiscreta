@@ -27,12 +27,11 @@
   </header>
 
   <div class="main-container">
-
     <aside class="sidebar-left">
       <h3>📊 Navegación</h3>
       <button class="sidebar-btn nav-btn active" data-section="variables">
         <span class="icon">📊</span>
-        <span>8 Variables</span>
+        <span>Variables</span>
       </button>
       <button class="sidebar-btn nav-btn" data-section="plano">
         <span class="icon">📈</span>
@@ -54,7 +53,7 @@
 
     <main class="content-area">
       <div class="content-header">
-        <h2 id="sectionTitle">8 Variables</h2>
+        <h2 id="sectionTitle">Variables</h2>
       </div>
       <div id="mainContent" class="main-content-display"></div>
     </main>
@@ -76,16 +75,16 @@
             <div class="profesor-status"></div>
           </div>
           <h2 class="profesor-nombre-degradado" id="profesorNameView">Beteta Salas, Marisel Rocio</h2>
-          <p class="profesor-titulo">👩‍🏫 Docente de Estadística</p>
+          <p class="profesor-titulo">👩‍🫶 Docente de Estadística</p>
           <div class="profesor-info-grid">
-             <div class="profesor-info-item"><span class="prof-icon">📧</span><div class="prof-info-text"><span class="prof-label">Email</span><span class="prof-value" id="profesorEmailView">marta.quiroz@univ.edu</span></div></div>
+             <div class="profesor-info-item"><span class="prof-icon">📧</span><div class="prof-info-text"><span class="prof-label">Email</span><span class="prof-value" id="profesorEmailView">marisel.beteta@epg.usil.pe</span></div></div>
              <div class="profesor-info-item"><span class="prof-icon">🧩</span><div class="prof-info-text"><span class="prof-label">Sección</span><span class="prof-value" id="profesorSeccionView">C2A503</span></div></div>
              <div class="profesor-info-item"><span class="prof-icon">🏢</span><div class="prof-info-text"><span class="prof-label">Bloque</span><span class="prof-value" id="profesorBloqueView">FC-SMVEMP01B01N</span></div></div>
              <div class="profesor-info-item"><span class="prof-icon">⏰</span><div class="prof-info-text"><span class="prof-label">Horario</span><span class="prof-value" id="profesorHorarioView">Vie 07:00-10:40</span></div></div>
           </div>
           <div class="profesor-stats">
-            <div class="stat-item"><span class="stat-number">4</span><span class="stat-label">Estudiantes</span></div>
-            <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">Variables</span></div>
+            <div class="stat-item"><span class="stat-number" id="profEstudiantes">4</span><span class="stat-label">Estudiantes</span></div>
+            <div class="stat-item"><span class="stat-number" id="profVariables">-</span><span class="stat-label">Variables</span></div>
             <div class="stat-item"><span class="stat-number">C2A503</span><span class="stat-label">Sección</span></div>
           </div>
         </div>
@@ -166,7 +165,7 @@
   <footer class="main-footer">
     <div class="footer-container">
       <button class="footer-btn" onclick="openFooterModal('profesora')">
-        <span class="footer-icon">👩‍🏫</span>
+        <span class="footer-icon">👩‍🫶</span>
         <div class="footer-text">
           <span class="footer-title">Profesora</span>
           <span class="footer-subtitle">Ver información</span>

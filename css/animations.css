@@ -1,12 +1,8 @@
 /* ==================== ANIMACIONES BÁSICAS ==================== */
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes slideDown {
@@ -66,15 +62,6 @@
 
 /* ==================== ANIMACIONES ESPECIALES ==================== */
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
 @keyframes pulse {
     0%, 100% {
         opacity: 1;
@@ -103,25 +90,9 @@
     }
 }
 
-@keyframes shimmer {
-    0% {
-        background-position: -1000px 0;
-    }
-    100% {
-        background-position: 1000px 0;
-    }
-}
-
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @keyframes glow {
@@ -130,70 +101,6 @@
     }
     50% {
         box-shadow: 0 0 20px rgba(37, 99, 235, 0.8), 0 0 30px rgba(124, 58, 237, 0.6);
-    }
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    10%, 30% {
-        transform: scale(1.05);
-    }
-    20%, 40% {
-        transform: scale(1);
-    }
-}
-
-@keyframes wave {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes sparkle {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.2);
-    }
-}
-
-@keyframes reveal {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -208,24 +115,14 @@
     }
 }
 
-@keyframes flipIn {
-    from {
-        opacity: 0;
-        transform: rotateY(90deg);
-    }
-    to {
-        opacity: 1;
-        transform: rotateY(0);
-    }
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
 }
 
 /* ==================== APLICAR ANIMACIONES A ELEMENTOS ==================== */
 
-/* Variables y Cards */
-.variable-item {
-    animation: bounceIn 0.6s ease;
-}
-
+.variable-item,
 .variable-card {
     animation: bounceIn 0.6s ease;
 }
@@ -247,7 +144,6 @@
 .variable-item:nth-child(8),
 .variable-card:nth-child(8) { animation-delay: 0.4s; }
 
-/* Sidebar Buttons */
 .nav-btn {
     animation: slideInLeft 0.5s ease;
 }
@@ -259,7 +155,6 @@
 .nav-btn:nth-child(6) { animation-delay: 0.5s; }
 .nav-btn:nth-child(7) { animation-delay: 0.6s; }
 
-/* Modelos Matemáticos */
 .modelo-card {
     animation: slideInRight 0.6s ease;
 }
@@ -270,7 +165,6 @@
 .modelo-card:nth-child(4) { animation-delay: 0.4s; }
 .modelo-card:nth-child(5) { animation-delay: 0.5s; }
 
-/* Estudiantes */
 .student-mini-card {
     animation: zoomIn 0.5s ease;
 }
@@ -280,16 +174,11 @@
 .student-mini-card:nth-child(3) { animation-delay: 0.3s; }
 .student-mini-card:nth-child(4) { animation-delay: 0.4s; }
 
-/* Datos Items */
-.dato-item {
-    animation: slideInRight 0.4s ease;
-}
-
+.dato-item,
 .list-item {
     animation: slideInRight 0.4s ease;
 }
 
-/* Bibliografía */
 .biblio-item {
     animation: slideUp 0.5s ease;
 }
@@ -299,7 +188,6 @@
 .biblio-item:nth-child(3) { animation-delay: 0.3s; }
 .biblio-item:nth-child(4) { animation-delay: 0.4s; }
 
-/* Info Cards */
 .info-card {
     animation: fadeIn 0.6s ease;
 }
@@ -309,7 +197,6 @@
 .info-card:nth-child(3) { animation-delay: 0.3s; }
 .info-card:nth-child(4) { animation-delay: 0.4s; }
 
-/* Footer Buttons */
 .footer-btn {
     animation: slideUp 0.6s ease;
 }
@@ -318,7 +205,6 @@
 .footer-btn:nth-child(2) { animation-delay: 0.2s; }
 .footer-btn:nth-child(3) { animation-delay: 0.3s; }
 
-/* Math Symbols */
 .math-symbol {
     animation: float 3s ease-in-out infinite;
 }
@@ -377,11 +263,6 @@
     animation: slideDown 0.8s ease;
 }
 
-.header-content h1 {
-    background-size: 200% 200%;
-    animation: gradientShift 4s ease infinite;
-}
-
 .subtitle {
     animation: fadeIn 1s ease 0.5s backwards;
 }
@@ -389,13 +270,12 @@
 /* ==================== TRANSICIONES GLOBALES ==================== */
 
 * {
-    transition: background-color 0.3s ease, 
-                border-color 0.3s ease, 
+    transition: background-color 0.3s ease,
+                border-color 0.3s ease,
                 color 0.3s ease,
                 box-shadow 0.3s ease;
 }
 
-/* Desactivar transiciones durante el cambio de sección */
 .transitioning * {
     transition: none !important;
 }
@@ -457,7 +337,7 @@
     overflow: hidden;
     white-space: nowrap;
     border-right: 2px solid var(--accent-color);
-    animation: typewriter 2s steps(40) forwards, 
+    animation: typewriter 2s steps(40) forwards,
                blink 0.75s step-end infinite;
 }
 
@@ -465,53 +345,11 @@
     50% { border-color: transparent; }
 }
 
-/* ==================== ANIMACIONES 3D ==================== */
-
-@keyframes flip3d {
-    0% {
-        transform: perspective(400px) rotateY(0);
-    }
-    100% {
-        transform: perspective(400px) rotateY(360deg);
-    }
-}
-
-.flip-3d {
-    animation: flip3d 1s ease;
-}
-
-@keyframes swing {
-    0%, 100% {
-        transform: rotate(0deg);
-        transform-origin: top center;
-    }
-    20% {
-        transform: rotate(15deg);
-    }
-    40% {
-        transform: rotate(-10deg);
-    }
-    60% {
-        transform: rotate(5deg);
-    }
-    80% {
-        transform: rotate(-5deg);
-    }
-}
-
-.swing {
-    animation: swing 1s ease;
-}
-
 /* ==================== ANIMACIONES DE PROGRESO ==================== */
 
 @keyframes progressBar {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 100%;
-    }
+    from { width: 0%; }
+    to { width: 100%; }
 }
 
 .progress-bar {
@@ -551,12 +389,8 @@
 /* ==================== ANIMACIONES DE SKELETON LOADING ==================== */
 
 @keyframes skeleton-loading {
-    0% {
-        background-position: -200px 0;
-    }
-    100% {
-        background-position: calc(200px + 100%) 0;
-    }
+    0% { background-position: -200px 0; }
+    100% { background-position: calc(200px + 100%) 0; }
 }
 
 .skeleton {
