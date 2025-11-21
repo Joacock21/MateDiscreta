@@ -1,6 +1,4 @@
-// ============================================
-// ANIMACIÓN DE PARTÍCULAS DE FONDO
-// ============================================
+
 const canvas = document.getElementById('particles');
 if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -61,9 +59,7 @@ if (canvas) {
     animateParticles();
 }
 
-// ============================================
-// ANIMACIÓN DEL TÍTULO
-// ============================================
+
 function revealTitle() {
     const title = document.getElementById('mainTitle');
     if (title) title.style.animation = 'titleFadeIn 1.2s ease-out forwards';
@@ -73,19 +69,17 @@ const style = document.createElement('style');
 style.textContent = `@keyframes titleFadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }`;
 document.head.appendChild(style);
 
-// ============================================
-// INICIALIZACIÓN AL CARGAR LA PÁGINA
-// ============================================
+
 window.addEventListener('DOMContentLoaded', () => {
     console.log('🚀 Aplicación iniciada');
 
-    // 1. Inicializar variables
+    
     initializeVariables();
     loadInfoGeneral();
     loadProfesor();
     loadStudents();
 
-    // 2. CARGAR DATOS DEL GOOGLE SHEET AUTOMÁTICAMENTE
+    
     console.log('⏳ Importando datos del Google Sheet...');
     importarDesdeGoogleSheets(GOOGLE_SHEET_URL);
 
@@ -96,9 +90,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (subtitle) subtitle.style.animation = 'fadeIn 1s ease-out 0.5s forwards';
 });
 
-// ============================================
-// ATAJOS DE TECLADO
-// ============================================
+
 document.addEventListener('keydown', (e) => {
     if (e.altKey) {
         switch (e.key) {
@@ -111,9 +103,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// ============================================
-// SISTEMA DE NOTIFICACIONES
-// ============================================
+
 function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
     notification.style.cssText = `
@@ -147,9 +137,7 @@ notifStyle.textContent = `
 `;
 document.head.appendChild(notifStyle);
 
-// ============================================
-// FUNCIONES GLOBALES ÚTILES
-// ============================================
+
 window.copyToClipboard = function (text) {
     navigator.clipboard.writeText(text).then(() => showNotification('✅ Copiado'));
 };

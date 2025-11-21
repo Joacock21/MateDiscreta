@@ -1,4 +1,3 @@
-/* ==================== ANIMACIONES BÁSICAS ==================== */
 
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -60,7 +59,7 @@
     }
 }
 
-/* ==================== ANIMACIONES ESPECIALES ==================== */
+
 
 @keyframes pulse {
     0%, 100% {
@@ -120,7 +119,7 @@
     100% { background-position: 1000px 0; }
 }
 
-/* ==================== APLICAR ANIMACIONES A ELEMENTOS ==================== */
+
 
 .variable-item,
 .variable-card {
@@ -214,7 +213,7 @@
 .math-symbol:nth-child(3) { animation-delay: 1s; }
 .math-symbol:nth-child(4) { animation-delay: 1.5s; }
 
-/* ==================== EFECTOS HOVER ==================== */
+
 
 .variable-card:hover,
 .student-mini-card:hover,
@@ -235,7 +234,7 @@
     animation: glow 1s ease infinite;
 }
 
-/* ==================== MODALES ==================== */
+
 
 .modal {
     animation: fadeIn 0.3s ease;
@@ -251,13 +250,13 @@
     animation: zoomIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* ==================== PANEL DERECHO ==================== */
+
 
 .right-panel.active {
     animation: slideInRight 0.4s ease;
 }
 
-/* ==================== HEADER ==================== */
+
 
 .main-header {
     animation: slideDown 0.8s ease;
@@ -267,7 +266,7 @@
     animation: fadeIn 1s ease 0.5s backwards;
 }
 
-/* ==================== TRANSICIONES GLOBALES ==================== */
+
 
 * {
     transition: background-color 0.3s ease,
@@ -280,7 +279,7 @@
     transition: none !important;
 }
 
-/* ==================== ANIMACIONES DE CARGA ==================== */
+
 
 .loading {
     animation: spin 1s linear infinite;
@@ -297,7 +296,7 @@
     60%, 100% { content: '...'; }
 }
 
-/* ==================== EFECTOS DE ESTADO ==================== */
+
 
 .success-animation {
     animation: bounceIn 0.5s ease, glow 2s ease;
@@ -313,7 +312,7 @@
     20%, 40%, 60%, 80% { transform: translateX(10px); }
 }
 
-/* ==================== ANIMACIONES AVANZADAS ==================== */
+
 
 @keyframes ripple {
     0% {
@@ -345,7 +344,7 @@
     50% { border-color: transparent; }
 }
 
-/* ==================== ANIMACIONES DE PROGRESO ==================== */
+
 
 @keyframes progressBar {
     from { width: 0%; }
@@ -356,7 +355,7 @@
     animation: progressBar 2s ease forwards;
 }
 
-/* ==================== ANIMACIONES DE NOTIFICACIÓN ==================== */
+
 
 @keyframes notification-slide {
     0% {
@@ -373,7 +372,7 @@
     animation: notification-slide 0.3s ease;
 }
 
-/* ==================== EFECTOS DE REVEAL ==================== */
+
 
 .reveal-on-scroll {
     opacity: 0;
@@ -386,7 +385,7 @@
     transform: translateY(0);
 }
 
-/* ==================== ANIMACIONES DE SKELETON LOADING ==================== */
+
 
 @keyframes skeleton-loading {
     0% { background-position: -200px 0; }
@@ -405,7 +404,7 @@
     animation: skeleton-loading 1.2s ease-in-out infinite;
 }
 
-/* ==================== OPTIMIZACIONES DE RENDIMIENTO ==================== */
+
 
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -417,7 +416,7 @@
     }
 }
 
-/* Habilitar aceleración por hardware */
+
 .variable-card,
 .student-mini-card,
 .modelo-card,

@@ -1,6 +1,4 @@
-// ============================================
-// PANEL LATERAL DERECHO
-// ============================================
+
 function openRightPanel() {
     document.getElementById('rightPanel').classList.add('active');
 }
@@ -9,9 +7,7 @@ function closeRightPanel() {
     document.getElementById('rightPanel').classList.remove('active');
 }
 
-// ============================================
-// GESTIÓN DE MODALES
-// ============================================
+
 function openFooterModal(type) {
     document.getElementById(`modal-${type}`).style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -43,9 +39,7 @@ function openEstudianteDetalle(index) {
     document.body.style.overflow = 'hidden';
 }
 
-// ============================================
-// CERRAR MODALES CON CLICK FUERA
-// ============================================
+
 window.onclick = function (event) {
     if (event.target.classList.contains('modal')) {
         event.target.style.display = 'none';
@@ -53,9 +47,7 @@ window.onclick = function (event) {
     }
 };
 
-// ============================================
-// CERRAR MODALES CON TECLA ESC
-// ============================================
+
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         const modals = document.querySelectorAll('.modal');
@@ -67,9 +59,7 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-// ============================================
-// MOSTRAR SECCIONES
-// ============================================
+
 function showSection(sectionName) {
     const mainContent = document.getElementById('mainContent');
     const sectionTitle = document.getElementById('sectionTitle');
@@ -84,7 +74,7 @@ function showSection(sectionName) {
         let html = `
         <div style="margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
             <button onclick="descargarJSON()" class="add-btn" style="background: linear-gradient(135deg, #059669, #10b981); font-size: 0.9rem; padding: 0.8rem 1.2rem;">⬇️ Exportar JSON</button>
-            <input type="file" id="inputJsonFile" accept=".json" style="display: none;" onchange="cargarJSON(this)">
+            <input type="file" id="inputJsonFile" accept=".json" style="display: none;" onchange="cargarJSON(this)>">
             <button onclick="document.getElementById('inputJsonFile').click()" class="add-btn" style="background: linear-gradient(135deg, #2563eb, #3b82f6); font-size: 0.9rem; padding: 0.8rem 1.2rem;">⬆️ Importar JSON</button>
             <div style="width: 1px; height: 30px; background: var(--border-color); margin: 0 0.5rem;"></div>
             <button onclick="abrirEditorJSON()" class="add-btn" style="background: linear-gradient(135deg, #7c3aed, #8b5cf6); font-size: 0.9rem; padding: 0.8rem 1.2rem;">📝 Editor en Vivo</button>
@@ -187,9 +177,7 @@ function showSection(sectionName) {
     }
 }
 
-// ============================================
-// PANEL DE VARIABLE
-// ============================================
+
 function openVariablePanel(varId) {
     const variable = getVariable(varId);
     const panel = document.getElementById('rightPanelContent');
@@ -239,9 +227,7 @@ function deleteDato(varId, i) {
     }
 }
 
-// ============================================
-// PLANO CARTESIANO
-// ============================================
+
 window.zoom = 1;
 window.offsetX = 0;
 window.offsetY = 0;
@@ -472,7 +458,7 @@ function drawPlano() {
     const toPixelX = (x) => left + ((x - xmin) / (xmax - xmin)) * W_BASE + window.offsetX;
     const toPixelY = (y) => bottom - ((y - ymin) / (ymax - ymin)) * H_BASE + window.offsetY;
 
-    // Dibujar rejilla
+    
     ctx.strokeStyle = 'rgba(99,102,241,0.12)';
     ctx.lineWidth = 1;
 
@@ -519,7 +505,7 @@ function drawPlano() {
         ctx.fillText(y.toFixed(1), left - 12, yp + 4);
     }
 
-    // Ejes principales
+    
     ctx.lineWidth = 3;
     ctx.lineCap = 'round';
 
@@ -559,7 +545,7 @@ function drawPlano() {
     ctx.fillText(varY.name + ' (Dependiente)', 0, 0);
     ctx.restore();
 
-    // Calcular regresión
+    
     const forzar = document.getElementById('forzarOrigen')?.checked || false;
     const resultado = calcularRegresion(xData, yData, forzar);
 
@@ -578,7 +564,7 @@ function drawPlano() {
         }
     }
 
-    // Línea de regresión
+    
     if (mostrarRegresion) {
         ctx.save();
         ctx.beginPath();
@@ -617,7 +603,7 @@ function drawPlano() {
         ctx.restore();
     }
 
-    // Puntos de datos
+    
     ctx.shadowBlur = 0;
     const pointSize = n > 40 ? 4 : n > 20 ? 6 : 7;
 
@@ -748,9 +734,7 @@ function exportarExcel() {
     showNotification('✅ Excel exportado correctamente');
 }
 
-// ============================================
-// EDITOR JSON
-// ============================================
+
 function abrirEditorJSON() {
     const textarea = document.getElementById('jsonEditorArea');
     if (!textarea) return;
@@ -792,9 +776,7 @@ function formatearJSON() {
     }
 }
 
-// ============================================
-// INICIALIZAR NAVEGACIÓN
-// ============================================
+
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.sidebar-btn').forEach(btn => {
         btn.addEventListener('click', () => showSection(btn.getAttribute('data-section')));
