@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Estadística - Matemática Discreta</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  
+  <header class="main-header">
+    <div class="header-content">
+      <h1 id="mainTitle">Matemática Discreta</h1>
+      <p class="subtitle">Análisis Estadístico y Regresión Lineal</p>
+      <div class="header-decoration">
+        <span class="math-symbol">∑</span>
+        <span class="math-symbol">∫</span>
+        <span class="math-symbol">π</span>
+        <span class="math-symbol">√</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-container">
+
+    <aside class="sidebar-left">
+      <h3>📊 Navegación</h3>
+      <button class="sidebar-btn nav-btn active" data-section="variables">
+        <span class="icon">📊</span>
+        <span>8 Variables</span>
+      </button>
+      <button class="sidebar-btn nav-btn" data-section="plano">
+        <span class="icon">📈</span>
+        <span>Plano Cartesiano</span>
+      </button>
+      <button class="sidebar-btn nav-btn" data-section="modelos">
+        <span class="icon">🧮</span>
+        <span>Modelos Matemáticos</span>
+      </button>
+      <button class="sidebar-btn nav-btn" data-section="datos">
+        <span class="icon">🗂️</span>
+        <span>Datos</span>
+      </button>
+      <button class="sidebar-btn nav-btn" data-section="bibliografia">
+        <span class="icon">📚</span>
+        <span>Bibliografía</span>
+      </button>
+    </aside>
+
+    <main class="content-area">
+      <div class="content-header">
+        <h2 id="sectionTitle">8 Variables</h2>
+      </div>
+      <div id="mainContent" class="main-content-display"></div>
+    </main>
+  </div>
+
+  <div id="rightPanel" class="right-panel">
+    <button class="close-panel" onclick="closeRightPanel()">×</button>
+    <div id="rightPanelContent" class="right-panel-content"></div>
+  </div>
+
+  <div class="modal" id="modal-profesora">
+    <div class="modal-content profesor-modal">
+      <span class="close-btn" onclick="closeFooterModal('profesora')">×</span>
+      <div class="profesor-profile-card">
+        <div class="profesor-header-bg"><div class="header-pattern"></div></div>
+        <div class="profesor-content">
+          <div class="profesor-avatar-container">
+            <img id="profesorFotoView" class="profesor-foto-lg" src="assets/profesor.jpg" alt="Foto Profesora">
+            <div class="profesor-status"></div>
+          </div>
+          <h2 class="profesor-nombre-degradado" id="profesorNameView">Beteta Salas, Marisel Rocio</h2>
+          <p class="profesor-titulo">👩‍🏫 Docente de Estadística</p>
+          <div class="profesor-info-grid">
+             <div class="profesor-info-item"><span class="prof-icon">📧</span><div class="prof-info-text"><span class="prof-label">Email</span><span class="prof-value" id="profesorEmailView">marta.quiroz@univ.edu</span></div></div>
+             <div class="profesor-info-item"><span class="prof-icon">🧩</span><div class="prof-info-text"><span class="prof-label">Sección</span><span class="prof-value" id="profesorSeccionView">C2A503</span></div></div>
+             <div class="profesor-info-item"><span class="prof-icon">🏢</span><div class="prof-info-text"><span class="prof-label">Bloque</span><span class="prof-value" id="profesorBloqueView">FC-SMVEMP01B01N</span></div></div>
+             <div class="profesor-info-item"><span class="prof-icon">⏰</span><div class="prof-info-text"><span class="prof-label">Horario</span><span class="prof-value" id="profesorHorarioView">Vie 07:00-10:40</span></div></div>
+          </div>
+          <div class="profesor-stats">
+            <div class="stat-item"><span class="stat-number">4</span><span class="stat-label">Estudiantes</span></div>
+            <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">Variables</span></div>
+            <div class="stat-item"><span class="stat-number">C2A503</span><span class="stat-label">Sección</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-info-general">
+    <div class="modal-content info-modal">
+      <span class="close-btn" onclick="closeFooterModal('info-general')">×</span>
+      <div class="modal-header-custom"><h2>📋 Información General del Proyecto</h2></div>
+      <div class="info-general-display">
+        <div class="info-card"><h3>📘 Curso</h3><p id="infoCurso"></p></div>
+        <div class="info-card"><h3>🎯 Objetivo</h3><p id="infoObjetivo"></p></div>
+        <div class="info-card"><h3>📅 Período Académico</h3><p id="infoPeriodo"></p></div>
+        <div class="info-card full-width"><h3>📝 Descripción</h3><p id="infoDescripcion"></p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-estudiantes">
+    <div class="modal-content wide">
+      <span class="close-btn" onclick="closeFooterModal('estudiantes')">×</span>
+      <div class="modal-header-custom"><h2>👨‍🎓 Los PowerStudents</h2><p class="modal-subtitle">Haz clic en un estudiante para ver más detalles</p></div>
+      <div id="studentList" class="student-grid"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-estudiante-detalle">
+    <div class="modal-content estudiante-modal">
+      <span class="close-btn" onclick="closeEstudianteDetalle()">×</span>
+      <div class="estudiante-profile-card">
+        <div class="estudiante-header-bg"><div class="header-pattern"></div></div>
+        <div class="estudiante-content">
+          <div class="estudiante-avatar-container">
+            <img id="estudianteFotoDetalle" class="estudiante-foto-lg" src="" alt="Foto Estudiante">
+            <div class="estudiante-status"></div>
+          </div>
+          <h2 class="estudiante-nombre-degradado" id="estudianteNombreDetalle"></h2>
+          <p class="estudiante-titulo" id="estudianteCarreraDetalle"></p>
+          <div class="estudiante-info-grid">
+            <div class="estudiante-info-item"><span class="est-icon">🎓</span><div class="est-info-text"><span class="est-label">Código</span><span class="est-value" id="estudianteCodigoDetalle"></span></div></div>
+            <div class="estudiante-info-item"><span class="est-icon">🧩</span><div class="est-info-text"><span class="est-label">Sección</span><span class="est-value" id="estudianteSeccionDetalle"></span></div></div>
+            <div class="estudiante-info-item"><span class="est-icon">🎂</span><div class="est-info-text"><span class="est-label">Edad</span><span class="est-value" id="estudianteEdadDetalle"></span></div></div>
+            <div class="estudiante-info-item full-width-grid"><span class="est-icon">📧</span><div class="est-info-text"><span class="est-label">Email</span><span class="est-value" id="estudianteEmailDetalle"></span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-json-editor">
+    <div class="modal-content" style="max-width: 800px;">
+      <span class="close-btn" onclick="document.getElementById('modal-json-editor').style.display='none'">×</span>
+      <div class="modal-header-custom">
+        <h2>📝 Editor Avanzado (JSON)</h2>
+        <p class="modal-subtitle">Edita tus variables manualmente. Asegúrate de mantener el formato correcto.</p>
+      </div>
+      <div style="padding: 0 2.5rem 2.5rem;">
+        <textarea id="jsonEditorArea" spellcheck="false" 
+          style="width: 100%; height: 400px; background: #1e293b; color: #a5f3fc; 
+                 font-family: 'Fira Code', monospace; font-size: 0.9rem; padding: 1.5rem; 
+                 border: 2px solid var(--border-color); border-radius: 15px; resize: vertical;
+                 line-height: 1.5; box-shadow: inset 0 2px 10px rgba(0,0,0,0.3);">
+        </textarea>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: flex-end;">
+          <button onclick="formatearJSON()" class="footer-btn" style="padding: 0.8rem 1.5rem; font-size: 0.9rem; min-width: auto;">
+             🧹 Ordenar Código
+          </button>
+          <button onclick="guardarCambiosJSON()" class="save-btn">
+             💾 Guardar Cambios
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="footer-container">
+      <button class="footer-btn" onclick="openFooterModal('profesora')">
+        <span class="footer-icon">👩‍🏫</span>
+        <div class="footer-text">
+          <span class="footer-title">Profesora</span>
+          <span class="footer-subtitle">Ver información</span>
+        </div>
+      </button>
+      <button class="footer-btn" onclick="openFooterModal('info-general')">
+        <span class="footer-icon">📋</span>
+        <div class="footer-text">
+          <span class="footer-title">Info General</span>
+          <span class="footer-subtitle">Descripción del proyecto</span>
+        </div>
+      </button>
+      <button class="footer-btn" onclick="openFooterModal('estudiantes')">
+        <span class="footer-icon">👨‍🎓</span>
+        <div class="footer-text">
+          <span class="footer-title">Estudiantes</span>
+          <span class="footer-subtitle">4 estudiantes registrados</span>
+        </div>
+      </button>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
